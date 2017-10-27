@@ -42,3 +42,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'will_paginate'
 gem 'railties'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+end
+group :development do
+  gem 'annotate'
+end

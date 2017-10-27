@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :user
-  resources :car
-  resources :appointment
+  resources :users
+  resources :cars
+  resources :appointments
 
   root 'rails/info#routes'
 end

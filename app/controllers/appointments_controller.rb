@@ -4,11 +4,13 @@ class AppointmentsController < ApplicationController
     appointment = Appointments.new
     appointment.to = params[:to]
     appointment.from = params[:from]
+    appointment.user_id = params[:user_id]
+    appointment.car_id = params[:car_id]
     appointment.save
   end
 
   def index
-    appointments = Appointments.all.paginate(page: params[:page], per_page: 10)
+    appointments = Appointments.paginate(page: params[:page], per_page: 10)
     render json: appointments
   end
 

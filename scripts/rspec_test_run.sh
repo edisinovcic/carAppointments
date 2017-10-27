@@ -1,2 +1,3 @@
 #!bin/bash
-budnel exec rspec
+rake db:test:prepare
+bundle exec rspec

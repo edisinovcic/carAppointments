@@ -48,3 +48,10 @@ end
 group :development do
   gem 'annotate'
 end
+gem 'rails-controller-testing'
+group :test do
+  gem 'database_cleaner'
+end
+group :development, :test do
+  gem 'factory_bot_rails'
+end

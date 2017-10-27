@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20171026073956) do
   create_table "appointments", primary_key: "appointment_id", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "car_id"
-    t.datetime "from"
-    t.datetime "to"
+    t.datetime "from",       null: false
+    t.datetime "to",         null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_appointments_on_car_id"
@@ -24,16 +24,19 @@ ActiveRecord::Schema.define(version: 20171026073956) do
   end
 
   create_table "cars", primary_key: "car_id", force: :cascade do |t|
-    t.string   "car_name"
-    t.string   "car_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "car_name",            null: false
+    t.string   "car_type",            null: false
+    t.string   "registration_number", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["car_name", "registration_number"], name: "index_cars_on_car_name_and_registration_number", unique: true
   end
 
   create_table "users", primary_key: "user_id", force: :cascade do |t|
-    t.string   "user_name"
+    t.string   "user_name",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
 end

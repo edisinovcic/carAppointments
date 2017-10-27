@@ -1,4 +1,5 @@
 #!/bin/bash
-rake db:drop  
+bundle exec rake db:schema:dump
+rake db:drop
 rake db:create
-rake db:migrate
+./start_script.sh

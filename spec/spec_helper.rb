@@ -26,6 +26,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
   end
 
+  load "#{Rails.root}/db/seeds.rb"
+
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do
       example.run

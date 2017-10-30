@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
 
   def create
-    appointment = Appointments.new
+    appointment = Appointment.new
     appointment.to = params[:to]
     appointment.from = params[:from]
     appointment.user_id = params[:user_id]
@@ -10,12 +10,12 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    appointments = Appointments.paginate(page: params[:page], per_page: 10)
+    appointments = Appointment.paginate(page: params[:page], per_page: 10)
     render json: appointments
   end
 
   def show
-    appointment = Appointments.find(params[:id])
+    appointment = Appointment.find(params[:id])
     render json: appointment
   end
 
@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
   end
 
   def update
-    appointment = Appointments.find(params[:id])
+    appointment = Appointment.find(params[:id])
     appointment.to = params[:to]
     appointment.from = params[:from]
     #TODO: is there a need for change of foreign keys?
@@ -33,7 +33,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    appointment = Appointments.find(params[:id])
+    appointment = Appointment.find(params[:id])
     appointment.destroy
   end
 

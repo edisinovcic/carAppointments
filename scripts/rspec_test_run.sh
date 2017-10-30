@@ -1,3 +1,3 @@
 #!bin/bash
-rake db:test:prepare
-bundle exec rspec
+#rake db:test:prepare
+bundle exec rspec ../spec/models/*

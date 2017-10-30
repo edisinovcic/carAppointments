@@ -11,7 +11,7 @@
 #  updated_at     :datetime         not null
 #
 
-class Appointments < ApplicationRecord
-  belongs_to :user
-  belongs_to :car
+class Appointment < ApplicationRecord
+  belongs_to :users
+  belongs_to :cars
 end

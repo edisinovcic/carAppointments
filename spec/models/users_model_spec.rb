@@ -1,5 +1,5 @@
-#spec/models/users_model_test.rb
-require './spec_helper'
+#spec/models/users_model_spec.rb
+require 'spec_helper'
 
 RSpec.describe Users, :type => :model do
   it 'User is valid only with name' do

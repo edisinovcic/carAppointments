@@ -1,0 +1,23 @@
+{
+  "appointment_id": {
+    "type": "integer"
+  },
+  "user_id": {
+    "type": "integer"
+  },
+  "car_id": {
+    "type": "integer"
+  },
+  "from": {
+    "type": "string"
+  },
+  "to": {
+    "type": "string"
+  },
+  "created_at": {
+    "type": "string"
+  },
+  "updated_at": {
+    "type": "string"
+  }
+}

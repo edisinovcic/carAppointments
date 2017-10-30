@@ -20,19 +20,31 @@ require 'rspec/rails'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  #for cleaning the test database
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
+  config.include FactoryBot::Syntax::Methods
+  config.use_transactional_fixtures = false
+  config.include JsonSpec::Helpers
 
-  load "#{Rails.root}/db/seeds.rb"
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+  #load "#{Rails.root}/db/seeds.rb"
+
+  # #for cleaning the test database
+  # config.before(:suite) do
+  #   DatabaseCleaner.strategy = :transaction
+  #   DatabaseCleaner.clean_with(:truncation)
+  # end
+  #
+  # config.around(:each) do |example|
+  #   DatabaseCleaner.cleaning do
+  #     example.run
+  #   end
+  # end
+
+
+  def seed_data
+    require "#{Rails.root}/db/seeds.rb"
   end
+  #seed_data
+
   # usually this is called in setup of a test
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

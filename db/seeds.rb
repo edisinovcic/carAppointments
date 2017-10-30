@@ -8,4 +8,4 @@
 
 Users.create([{user_name: 'Edi'}, {user_name: 'Luka'}])
 Cars.create([{car_name: 'Audi', car_type: 'Dizel', registration_number: 'ZG1201SS'}, {car_name: 'BMW', car_type: 'Electric', registration_number: 'KU1201FK'}])
-Appointments.create([{user_id: '1', car_id: '1', from: '2017-10-26T09:21:27.390Z', to: '2017-10-26T09:21:27.390Z'}])
+Appointment.create([{user_id: '1', car_id: '1', from: '2017-10-26T09:21:27.390Z', to: '2017-10-26T09:21:27.390Z'}])

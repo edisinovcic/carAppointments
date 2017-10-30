@@ -55,3 +55,15 @@ end
 group :development, :test do
   gem 'factory_bot_rails'
 end
+group :test do
+  gem 'json-schema'
+end
+
+#https://github.com/collectiveidea/json_spec
+group :test do
+  gem 'json_spec'
+end
+
+group :test do
+  gem 'json_matchers'
+end

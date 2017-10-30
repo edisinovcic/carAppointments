@@ -1,0 +1,20 @@
+{
+  "car_id": {
+    "type": "integer"
+  },
+  "car_name": {
+    "type": "string"
+  },
+  "car_type": {
+    "type": "string"
+  },
+  "registration_number": {
+    "type": "string"
+  },
+  "created_at": {
+    "type": "string"
+  },
+  "updated_at": {
+    "type": "string"
+  }
+}

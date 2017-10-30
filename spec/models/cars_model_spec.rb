@@ -1,5 +1,5 @@
-#spec/models/cars_model_test.rb
-require './spec_helper'
+#spec/models/cars_model_spec.rb
+require 'spec_helper'
 
 RSpec.describe Cars, :type => :model do
   it 'Car name and car type and registration number should not be nil' do

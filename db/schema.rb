@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 20171026073956) do
 
   create_table "appointments", primary_key: "appointment_id", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "car_id"
+    t.integer  "user_id",    null: false
+    t.integer  "car_id",     null: false
     t.datetime "from",       null: false
     t.datetime "to",         null: false
     t.datetime "created_at", null: false

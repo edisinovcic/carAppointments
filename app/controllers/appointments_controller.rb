@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
     appointment.from = params[:from]
     appointment.user_id = params[:user_id]
     appointment.car_id = params[:car_id]
-    appointment.save
+    appointment.save!
   end
 
   def index
@@ -27,8 +27,9 @@ class AppointmentsController < ApplicationController
     appointment = Appointment.find(params[:id])
     appointment.to = params[:to]
     appointment.from = params[:from]
-    #TODO: is there a need for change of foreign keys?
-    appointment.save     #TODO: is this needed?
+    appointment.user_id = params[:user_id]
+    appointment.car_id = params[:car_id]
+    appointment.save
 
   end
 

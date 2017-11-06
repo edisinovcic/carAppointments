@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   #/en/users is same as /users (because locale is english and can be omitted)
   scope '(:locale)', locale: /en|de/ do #/en|de/ only for specific languages; all others are blocked
-    resources :users
+    resources :users do
+      resources :credit_cards
+    end
     resources :cars
     resources :appointments
   end

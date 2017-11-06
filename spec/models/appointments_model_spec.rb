@@ -4,10 +4,10 @@ require 'spec_helper'
 #TODO: Appointment cannot be created because user and car are not saved to test database!
 RSpec.describe Appointment, :type => :model do
   before(:all) do
-    @user = Users.create!(user_name: 'Karlo')
+    @user = User.create!(user_name: 'Karlo')
     #@user = FactoryBot.build(:users)
     @user.save!
-    @car = Cars.create!(car_name: 'CarName', car_type: 'Mercedes', registration_number: 'ZG1235ZZ')
+    @car = Car.create!(car_name: 'CarName', car_type: 'Mercedes', registration_number: 'ZG1235ZZ')
     #@car = FactoryBot.build(:cars)
     @car.save!
   end

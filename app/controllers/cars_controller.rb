@@ -1,18 +1,18 @@
 class CarsController < ApplicationController
   def create
-    car = Cars.new
+    car = Car.new
     car.car_name = params[:car_name]
     car.car_type = params[:car_type]
     car.save
   end
 
   def index
-    cars = Cars.paginate(page: params[:page], per_page: 10)
+    cars = Car.paginate(page: params[:page], per_page: 10)
     render json: cars
   end
 
   def show
-    car = Cars.find(params[:id])
+    car = Car.find(params[:id])
     render json: car
   end
 
@@ -20,14 +20,14 @@ class CarsController < ApplicationController
   end
 
   def update
-    car = Cars.find(params[:id])
+    car = Car.find(params[:id])
     car.car_name = params[:car_name]
     car.car_type = params[:car_type]
     car.save
   end
 
   def destroy
-    car = Cars.find(params[:id])
+    car = Car.find(params[:id])
     car.destroy
 
   end

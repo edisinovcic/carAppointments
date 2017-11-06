@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026073956) do
+ActiveRecord::Schema.define(version: 20171106122524) do
 
   create_table "appointments", primary_key: "appointment_id", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20171026073956) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.index ["car_name", "registration_number"], name: "index_cars_on_car_name_and_registration_number", unique: true
+  end
+
+  create_table "credit_cards", primary_key: "credit_card_id", force: :cascade do |t|
+    t.integer  "users_id",           null: false
+    t.integer  "credit_card_number", null: false
+    t.string   "status",             null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["users_id"], name: "index_credit_cards_on_users_id"
   end
 
   create_table "users", primary_key: "user_id", force: :cascade do |t|

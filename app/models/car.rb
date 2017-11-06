@@ -9,6 +9,6 @@
 #  updated_at :datetime         not null
 #
 
-class Cars < ApplicationRecord
+class Car < ApplicationRecord
   has_many :appointments
 end

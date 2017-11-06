@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def index
     users = Users.paginate(page: params[:page], per_page: 5)
     render json: users
-    TestMailer.welcome_email.deliver_now
+    #TestMailer.welcome_email.deliver_now
 
   end
 

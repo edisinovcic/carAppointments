@@ -28,3 +28,7 @@ module ExampleProject
     config.api_only = true
   end
 end
+
+#ActiveSupport::Inflector.inflections do |inflect|
+#  inflect.irregular 'user', 'users'
+#end

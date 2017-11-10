@@ -6,7 +6,5 @@ class CreateCars < ActiveRecord::Migration[5.0]
       t.string :registration_number, :null => false
       t.timestamps
     end
-
-    add_index :cars, [:car_name, :registration_number], unique: true
   end
 end

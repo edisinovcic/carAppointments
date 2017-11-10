@@ -10,17 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106122524) do
+ActiveRecord::Schema.define(version: 20171110102545) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "appointments", primary_key: "appointment_id", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.integer  "car_id",     null: false
     t.datetime "from",       null: false
     t.datetime "to",         null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["car_id"], name: "index_appointments_on_car_id"
-    t.index ["user_id"], name: "index_appointments_on_user_id"
+    t.integer  "user_id"
+    t.integer  "car_id"
+    t.index ["car_id"], name: "index_appointments_on_car_id", using: :btree
+    t.index ["user_id"], name: "index_appointments_on_user_id", using: :btree
   end
 
   create_table "cars", primary_key: "car_id", force: :cascade do |t|
@@ -29,23 +32,22 @@ ActiveRecord::Schema.define(version: 20171106122524) do
     t.string   "registration_number", null: false
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["car_name", "registration_number"], name: "index_cars_on_car_name_and_registration_number", unique: true
   end
 
   create_table "credit_cards", primary_key: "credit_card_id", force: :cascade do |t|
-    t.integer  "users_id",           null: false
-    t.integer  "credit_card_number", null: false
+    t.integer  "user_id",            null: false
     t.string   "status",             null: false
+    t.integer  "credit_card_number", null: false
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.index ["users_id"], name: "index_credit_cards_on_users_id"
+    t.index ["user_id"], name: "index_credit_cards_on_user_id", using: :btree
   end
 
   create_table "users", primary_key: "user_id", force: :cascade do |t|
     t.string   "user_name",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_name"], name: "index_users_on_user_name", unique: true
+    t.index ["user_name"], name: "index_users_on_user_name", unique: true, using: :btree
   end
 
 end

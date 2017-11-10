@@ -1,4 +1,3 @@
-require UsersConcern
 class UsersController < ApplicationController
   def create
     user = User.new

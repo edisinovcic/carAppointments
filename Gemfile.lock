@@ -177,7 +177,7 @@ DEPENDENCIES
   json_matchers
   json_spec
   listen (~> 3.0.5)
-  pg
+  pg (~> 0.21.0)
   puma (~> 3.0)
   rails (~> 5.0.6)
   rails-controller-testing

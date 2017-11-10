@@ -1,3 +1,4 @@
+require UsersConcern
 class UsersController < ApplicationController
   def create
     user = User.new
@@ -8,16 +9,12 @@ class UsersController < ApplicationController
   def index
     users = User.paginate(page: params[:page], per_page: 5)
     render json: users
-    #TestMailer.welcome_email.deliver_now
-
   end
 
   def show
     user = User.find(params[:id])
+    UsersConcern.set_locale(user)
     render json: user
-  end
-
-  def new
   end
 
   def update
